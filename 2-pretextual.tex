@@ -1,0 +1,407 @@
+% Modelo de trabalho acadêmico (Dissertação Mestrado / Doutorado) 
+% Desenvolvido por Carlos Vinícius Rasch Alves
+% Data: 21/04/2018
+% Versão: 1.0
+% Mestrado Profissional em Educação e Tecnologia - MPET
+% Grupo de Pesquisas em Modelagem do Conhecimento
+% ----------------------------------------------
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+\newpage
+
+% ==============================================
+% ELEMENTOS PRÉ-TEXTUAIS
+% ==============================================
+\pretextual
+
+% ----------------------------------------------
+% Capa Inicial
+% ----------------------------------------------
+%\imprimircapa
+% Capa personalizada sem o uso de \imprimircapa
+
+%\renewcommand{\imprimircapalogo}{%
+\begin{capa}
+\ThisCenterWallPaper{0.9}{images/ifsul_capa.jpg}
+\center
+\vspace*{15cm}
+
+\makebox[\textwidth][c]{\ABNTEXchapterfont\bfseries\large\MakeTextUppercase\imprimirtitulo\hspace{1cm}}\vspace{2cm}
+
+\makebox[\textwidth][c]{\ABNTEXchapterfont\bfseries\large\MakeTextUppercase\imprimirautor\hspace{1cm}}\vspace{3cm}
+
+\makebox[\textwidth][c]{\bfseries\large{\imprimirdata}\hspace{1cm}}
+\end{capa}
+
+
+
+% ----------------------------------------------
+% Capa
+% ----------------------------------------------
+%\imprimircapa
+% Capa personalizada sem o uso de \imprimircapa
+\begin{capa} 
+   \center
+   %\ABNTEXchapterfont\large\MakeUppercase{\imprimirinstituicao} 
+    \normalsize{
+    \bfseries\large{INSTITUTO FEDERAL SUL-RIO-GRANDENSE}
+    \par
+    \bfseries{CÂMPUS PELOTAS}
+    \par
+    \bfseries{DEPARTAMENTO DE ENSINO DE GRADUAÇÃO E PÓS-GRADUAÇÃO}
+    \par
+    \bfseries{MESTRADO PROFISSIONAL EM EDUCAÇÃO E TECNOLOGIA}
+    \par
+    \bfseries{MPET}
+    }  
+   \vfill
+   \ABNTEXchapterfont\large\bfseries\textsc{\MakeUppercase{\imprimirautor}}
+   \vfill
+   \begin{center}
+   \ABNTEXchapterfont\Large\bfseries{\MakeUppercase{\imprimirtitulo}}
+   \end{center}
+   \vfill
+   \vspace*{5cm}
+   \large\bfseries\MakeTextUppercase{\imprimirlocal} \\
+   \large\bfseries\imprimirdata
+   \vspace*{1cm}
+\end{capa}
+
+% ----------------------------------------------
+% Folha de rosto
+% ----------------------------------------------
+% folha de rosto personalizada sem uso de \imprimirfolhaderosto
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+\begin{center}
+  {\ABNTEXchapterfont\large\MakeUppercase\imprimirautor}
+  \vspace*{\fill}%\vspace*{\fill}
+  \begin{center}
+  \ABNTEXchapterfont\bfseries\Large\MakeUppercase\imprimirtitulo
+  \end{center}
+  \vspace*{\fill}
+  
+  \abntex@ifnotempty{\imprimirpreambulo}{%
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+    \SingleSpacing
+    \imprimirpreambulo
+    \end{minipage}%
+    \vspace*{\fill}
+  }%
+
+  \abntex@ifnotempty{\large\bfseries\imprimirorientador}{%
+  \hspace{1\textwidth}
+  \begin{minipage}{.9\textwidth}
+  	\begin{center}
+	{\large\bfseries\imprimirorientadorRotulo~\large\bfseries\imprimirorientador}%
+    \end{center}
+  \end{minipage}%
+  }%
+  
+  \abntex@ifnotempty{\large\bfseries\imprimircoorientador}{%
+  \hspace{1\textwidth}
+  \begin{minipage}{.9\textwidth}
+  	\begin{center}
+	{\large\bfseries\imprimircoorientadorRotulo~\large\bfseries\imprimircoorientador}%
+    \end{center}
+  \end{minipage}%
+  }%
+  
+  \vspace*{\fill}
+  %{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+
+  {\large\bfseries\MakeUppercase\imprimirlocal}
+  \par
+  {\large\bfseries\imprimirdata}
+  \vspace*{1cm}
+\end{center}
+}
+\makeatother
+
+% Folha de rosto (o * indica que haverá a ficha bibliográfica)
+\imprimirfolhaderosto*
+
+% ----------------------------------------------
+% Inserir a ficha bibliografica catalográfica
+% ----------------------------------------------
+% Isto é um exemplo de Ficha Catalográfica, ou ``Dados internacionais de catalogação-na-publicação''. Você pode utilizar este modelo como referência. Porem, provavelmente a biblioteca da sua instituição de ensino lhe fornecerá um PDF com a ficha catalográfica definitiva após a defesa do trabalho. Quando estiver com o documento, salve-o como PDF no diretório do seu projeto e substitua todo o conteúdo de implementação deste arquivo pelo comando comentado abaixo abaixo:
+
+% \begin{fichacatalografica}
+%     \includepdf{fig_ficha_catalografica.pdf}
+% \end{fichacatalografica}
+
+\begin{fichacatalografica}
+	\sffamily
+	\vspace*{\fill}					% Posição vertical
+  	\begin{center}					% Minipage Centralizado
+	\fbox{
+    \begin{minipage}[t]{1,5cm} 
+    \vspace{0.5cm} 
+    D383m % Numero de exemplo, aqui irá um número que o bibliotecario ira gerar
+    \end{minipage}
+    
+    \begin{minipage}[t]{11cm}	% Largura
+	\small
+    \vspace{0.5cm}
+	%\imprimirautor		% ATENCAO - SUBSTITUIR POR %Sobrenome, Nome do autor
+    AutorSobrenome, AutorNome
+	
+	\hspace{0.5cm} 
+    \imprimirtitulo  / \imprimirautor. -- \imprimirdata.
+	
+	\hspace{0.5cm} 
+    \pageref{LastPage} p.: il.; 30 cm.\\
+	
+    \hspace{0.5cm}
+    \imprimirorientadorRotulo~\imprimirorientador ;
+    \imprimircoorientadorRotulo~\imprimircoorientador\\
+    
+    \hspace{0.5cm}
+	\imprimirtipotrabalho~--~Instituto Federal de Educação, Ciência e Tecnologia Sul-rio-grandense, Programa de Pós-Graduação em Educação, Mestrado Profissional em Educação e Tecnologia, Pelotas, RS, \imprimirdata. \hfill 
+    
+    
+	\hspace{0.5cm}
+		1. Palavra-chave1
+		2. Palavra-chave1
+		3. Palavra-chave1
+        I. Título \\
+		%I. \imprimirtitulo \\
+        %II. \imprimirorientador \\
+    
+	\hspace{8.75cm} CDU 621.3 %algum outro numero
+	
+    \end{minipage}}
+    
+    \hspace{0.5cm}
+    Catalogação na Publicação: \\  	
+    Bibliotecário Nome Sobrenome – CRB 11/1111
+	
+    \end{center}
+\end{fichacatalografica}
+
+% ----------------------------------------------
+% Inserir errata
+% ----------------------------------------------
+% \begin{errata}
+% Elemento opcional da \citeonline[4.2.1.2]{NBR14724:2011}. Exemplo:
+
+% \vspace{\onelineskip}
+
+% FERRIGNO, C. R. A. \textbf{Tratamento de neoplasias ósseas apendiculares com reimplantação de enxerto ósseo autólogo autoclavado associado ao plasma rico em plaquetas}: estudo crítico na cirurgia de preservação de membro em cães. 2011. 128 f. Tese (Livre-Docência) - Faculdade de Medicina Veterinária e Zootecnia, Universidade de São Paulo, São Paulo, 2011.
+
+% \begin{table}[htb]
+% \center
+% \footnotesize
+% \begin{tabular}{|p{1.4cm}|p{1cm}|p{3cm}|p{3cm}|}
+%   \hline
+%    \textbf{Folha} & \textbf{Linha}  & \textbf{Onde se lê}  & \textbf{Leia-se}  \\
+%     \hline
+%     1 & 10 & auto-conclavo & autoconclavo\\
+%    \hline
+% \end{tabular}
+% \end{table}
+
+% \end{errata}
+
+% ----------------------------------------------
+% Inserir folha de aprovação
+% ----------------------------------------------
+% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma imagem da página assinada pela banca com o comando comentado abaixo:
+
+%
+% \includepdf{folhadeaprovacao_final.pdf}
+%
+
+\begin{folhadeaprovacao}
+% Gerada conforme instrucoes do MPET
+  \begin{center}
+  {\ABNTEXchapterfont\large\MakeUppercase\imprimirautor}
+
+  \vspace*{\fill}\vspace*{\fill}
+    \begin{center}
+    	\ABNTEXchapterfont\bfseries\Large\MakeUppercase\imprimirtitulo
+    \end{center}
+  \vspace*{\fill}
+
+  \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+    	\imprimirpreambulo 
+    \end{minipage}%
+
+% Apos aprovação, deve ser descomentada a parte de comando abaixo afim de validar a data de aprovação da banca
+
+%  \vspace*{\fill}
+%    \begin{center}
+%  	  Aprovado em 22 de Abrilde 2018. \\
+%    \end{center}
+%  \vspace*{\fill}
+  
+   \begin{minipage}{.1\textwidth}
+    \assinatura{\imprimirorientadorRotulo~\imprimirorientador}     
+    \assinatura{\imprimircoorientadorRotulo~\imprimircoorientador}
+   \end{minipage}%
+  \vspace*{\fill} \vspace*{\fill}
+  \hspace{.4\textwidth}
+    
+    BANCA EXAMINADORA:% \imprimirlocal, \today :
+  \end{center}
+   
+  
+   \assinatura{Prof. Dr. Nome Sobrenome -- IES \\ Avaliador}
+   \assinatura{Prof. Dr. Nome Sobrenome -- IES \\ Avaliador Externo}
+   \assinatura{Prof. Dr. Nome Sobrenome -- IES \\ Avaliador Externo}
+   %\assinatura{\textbf{Professor} \\ Convidado 4}
+     
+    \vspace*{\fill} \vspace*{\fill}
+    \hspace{.4\textwidth}
+
+% As linhas abaixo estão de acordo com o modelo abntex2 - Caso a IES solicite, devem ser descomentadas as linhas abaixo
+
+%    \vspace*{\fill}
+%    \begin{flushleft}
+%    	Visto e permitida a impressão\\
+%        \imprimirlocal
+%    \end{flushleft}
+    
+%    \vspace*{\fill}
+%    \hspace{.4\textwidth}
+%    \begin{minipage}{.5\textwidth}
+%    	Prof. Dr. Nome do Coordenador do curso \\
+%        Coordenador Mestrado Profissional em Educação e Tecnologia
+%    \end{minipage}%
+%    \begin{center}
+%     \vspace*{0.5cm}
+%       {\large\imprimirlocal}
+%       \par
+%       {\large\imprimirdata}
+%       \vspace*{1cm}
+%   \end{center}
+  
+\end{folhadeaprovacao}
+
+% ----------------------------------------------
+% Dedicatória
+% ----------------------------------------------
+\begin{dedicatoria}
+%   \vspace*{\fill}
+%   \centering
+%   \noindent
+   \vspace*{20.0cm}
+   \hspace{6.0cm} \parbox{10cm} {\textit{Este trabalho é dedicado às crianças adultas que,\\
+   quando pequenas, sonharam em se tornar jogadores de futebol.}}
+   \vspace*{\fill}
+\end{dedicatoria}
+
+% ----------------------------------------------
+% Agradecimentos
+% ----------------------------------------------
+\begin{agradecimentos}
+
+    \lipsum[1]
+\end{agradecimentos}
+
+% ----------------------------------------------
+% Epígrafe
+% ----------------------------------------------
+% Importante: O autor da epígrafe deve constar na lista de referências
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+		\textit{``Os que se encantam com a prática sem a ciência \\
+        são como os timoneiros que entram no navio sem timão nem bússola,\\
+       nunca tendo certeza do seu destino."\\
+         (Leonardo da Vinci)}
+ 	\end{flushright}
+\end{epigrafe}
+
+% ||||||||||||||||||||||||||||||||||||||||||||||
+% RESUMOS
+% ||||||||||||||||||||||||||||||||||||||||||||||
+
+% ----------------------------------------------
+% Resumo em português
+% ----------------------------------------------
+% Importante: De acordo com a NBR6024 as palavras-chaves devem ser separadas entre si por ponto e devem ter somente a primeira palavra escrita com letra maiúscula
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+	
+    \lipsum[7]
+    
+	\vspace{\onelineskip}
+ 
+	\noindent 
+	\textbf{Palavras-chaves}: Mapas Conceituais. Pesquisa. Mestrado. Doutorado. Grupo de Pesquisa. 
+\end{resumo}
+
+% ----------------------------------------------
+% Resumo em inglês
+% ----------------------------------------------
+% Importante: De acordo com a NBR6024 as palavras-chaves devem ser separadas entre si por ponto e devem ter somente a primeira palavra escrita com letra maiúscula
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+	\lipsum[8]
+    
+	\vspace{\onelineskip}
+ 
+	\noindent 
+	\textbf{Key-words}: Concept Maps. Research. Masters. Doctorate Degree. Research Group.
+\end{otherlanguage*}
+\end{resumo}
+
+
+
+% ----------------------------------------------
+% inserir lista de ilustrações (ou figuras)
+% ----------------------------------------------
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+
+
+% ----------------------------------------------
+% inserir lista de tabelas
+% ----------------------------------------------
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+% ----------------------------------------------
+% inserir lista de quadros (ex.: \begin{quadro} \end{quadro})
+% ----------------------------------------------
+% \pdfbookmark[0]{\listofquadrosname}{loq}
+% \listofquadros*
+% \cleardoublepage
+
+% ----------------------------------------------
+% inserir lista de abreviaturas e siglas
+% ----------------------------------------------
+% Importante: As abreviaturas e siglas devem estar em ordem alfabética
+\begin{siglas}
+  \item[ABNT] Associação Brasileira de Normas Técnicas
+  \item[abnTeX] ABsurdas Normas para TeX
+\end{siglas}
+
+% ----------------------------------------------
+% inserir lista de símbolos
+% ----------------------------------------------
+% Importante: Os símbolos devem estar na ordem de aparecimento no texto.
+\begin{simbolos}
+  \item[$ \Gamma $] Letra grega Gama
+  \item[$ \Lambda $] Lambda
+  \item[$ \zeta $] Letra grega minúscula zeta
+  \item[$ \in $] Pertence
+\end{simbolos}
+
+% ----------------------------------------------
+% inserir o sumário
+% ----------------------------------------------
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
